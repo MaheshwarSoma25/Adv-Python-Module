@@ -1,0 +1,87 @@
+TKinter:
+
+import tkinter as tk
+
+root = tk.Tk()
+# root.mainloop() #What does this mainloop do?
+Keeps the window open
+Waits for button clicks, typing, resizing
+Updates the UI continuously
+Without mainloop(), your window will open and close instantly.
+
+
+
+root.title('First App')
+root.geometry('300x500')
+tk.Label(root, text = 'Hello Tkinter!', font=('Arial', 16)).pack(pady = 20)
+
+
+#Button
+tk.button(root, text='click me', command=say_hello).pack()
+
+#Entry
+tk.Entry(root)
+tk.Entry(root, show='*')
+
+tk.Text(root, height=10, width = 60)
+tk.configure(state = tk.DISABLED)
+tk.configure(state=tk.NORMAL)
+
+var = tk.IntVar()
+#.get and .set for values
+tk.Checkbutton(root, text = 'I agree', variable=var, command=say_hello)
+
+
+
+choice = tk.StringVar()
+tk.Radiobutton(root, text = 'OPTION A', variable=choice, value='A' command=say_hello)
+
+
+# listbox = tk.Listbox(root)
+# listbox.insert(1, "Python")
+# listbox.insert(2, "Java")
+# listbox.insert(3, "C++")
+# listbox.pack()
+
+
+# from tkinter import messagebox
+#def show_msg():
+#     messagebox.showinfo("Info", "This is an info message")
+#     messagebox.showwarning("Warning", "This is a warning!")
+#     messagebox.showerror("Error", "Oops! Something went wrong.")
+
+
+
+
+
+grid(row = 0, column = 0, padx = 10, pady = 5)
+
+
+#Username, Password application
+
+frame = tk.Frame(root, bd=5, height=250, width= 300, relief='solid')
+frame.pack()
+
+tk.Label(frame, text="Inside Frame").pack()
+tk.Button(frame, text="Click").pack()
+
+
+
+pack, grid and place => 
+tk.Label(root, text="Hello").place(x=50, y=100)
+grid => column width => 
+
+
+
+# from tkinter import filedialog
+
+# def open_file():
+#     file = filedialog.askopenfilename(title="Select a File")
+#     print("Selected File:", file)
+
+# file_input = tk.Button(root, text="Open File", command=open_file).grid()
+# print(file_input)
+# root.mainloop()
+
+
+
